@@ -1,6 +1,37 @@
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap');
 
 * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
     background-color: #202124;
+    color: #f3f3f3;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 400;
+    text-decoration: none;
+
 }
 
+header {
+    background-color: rgba(29, 25, 29, 0.2);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 10%;
+}
+
+main {
+    padding: 15px 5%;
+    text-align: center;
+}
+
+main > marquee {
+    text-align: center;
+    line-height: 300%;
+    margin: 3rem;
+    max-height: 70vh;
+}
+
+#pup-logo {
+    width: 2rem;
+}
