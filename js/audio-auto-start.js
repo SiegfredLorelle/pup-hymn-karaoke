@@ -5,12 +5,28 @@ const lyrics = document.querySelector("#lyrics");
 lyrics.stop();
 
 
-audioPlayer.addEventListener("play", () => {
+
+
+audioPlayer.addEventListener("timeupdate", startAtTwelve);
+
+
+function startAtTwelve() {
+    if (audioPlayer.currentTime >= 12.0) {
+        lyrics.start();
+        audioPlayer.addEventListener("play", playLyrics)
+        audioPlayer.addEventListener("pause", stopLyrics)
+        audioPlayer.removeEventListener("timeupdate", startAtTwelve)
+    }
+}
+
+function playLyrics() {
     lyrics.start();
-})
-audioPlayer.addEventListener("pause", () => {
+}
+function stopLyrics() {
     lyrics.stop();
-})
+}
+
+
 
 
 
