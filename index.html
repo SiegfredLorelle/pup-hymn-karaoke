@@ -6,7 +6,14 @@
         <meta name="description" content="PUP Hymn with audio and scrolling text">
         <meta name="author" content="Siegfred Lorelle C. Mina">
         <link rel="icon" href=""><!-- TODO: FAVICON -->
+
+        <!-- Fonts from Google Font -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <!-- Icons from Google Font -->
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0" />
+        <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap" rel="stylesheet">
+
         <link rel="stylesheet" href="/css/styles.css">
         <title>PUP Hymn</title>
     </head>
@@ -25,7 +32,7 @@
             <h1>Imno ng PUP</h1>
             <h4>S. Calabig, S. Roldan, and R. Amaranto</h4>
 
-            <marquee direction="up" loop="1">
+            <marquee direction="up" loop=1>
                 Sintang Paaralan<br>
                 Tanglaw ka ng bayan<br>
                 Pandayan ng isip ng kabataan<br>
@@ -45,10 +52,11 @@
                 PUP, pinagpala<br>
             </marquee>
 
-            
+            <!-- STICK AUDIO TO THE BOTTOM, HIDE WHEN INACTIVE, PLAY MARQUEE WHEN PLAYED -->
+            <audio controls src="/audio/Imno ng PUP (The PUP Hymn).mp3" autoplay>
+            </audio>
         </main>
 
-            <!-- TODO: AUDIO -->
             <!-- TODO: FOOTER -->
     </body>
 </html>
