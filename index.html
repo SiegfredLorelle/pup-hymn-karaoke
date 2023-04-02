@@ -32,7 +32,7 @@
             <h1>Imno ng PUP</h1>
             <h4>S. Calabig, S. Roldan, and R. Amaranto</h4>
 
-            <marquee direction="up" loop=1>
+            <marquee id="lyrics" direction="up" loop=1 scrollamount="2">
                 Sintang Paaralan<br>
                 Tanglaw ka ng bayan<br>
                 Pandayan ng isip ng kabataan<br>
@@ -53,10 +53,14 @@
             </marquee>
 
             <!-- STICK AUDIO TO THE BOTTOM, HIDE WHEN INACTIVE, PLAY MARQUEE WHEN PLAYED -->
-            <audio controls src="/audio/Imno ng PUP (The PUP Hymn).mp3" autoplay>
+            <audio id="audio-player" controls>
+                <source src="/audio/Imno ng PUP (The PUP Hymn).mp3">
+                Sorry, the current browser is not supported. Try using other browsers.
             </audio>
         </main>
 
             <!-- TODO: FOOTER -->
     </body>
+
+    <script src="/js/audio-auto-start.js"></script>
 </html>
