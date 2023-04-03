@@ -13,9 +13,9 @@ audioPlayer.addEventListener("timeupdate", startAtTwelve);
 function startAtTwelve() {
     if (audioPlayer.currentTime >= 12.0) {
         lyrics.start();
-        audioPlayer.addEventListener("play", playLyrics)
-        audioPlayer.addEventListener("pause", stopLyrics)
-        audioPlayer.removeEventListener("timeupdate", startAtTwelve)
+        audioPlayer.addEventListener("play", playLyrics);
+        audioPlayer.addEventListener("pause", stopLyrics);
+        audioPlayer.removeEventListener("timeupdate", startAtTwelve);
     }
 }
 
@@ -29,8 +29,8 @@ function stopLyrics() {
 audioPlayer.addEventListener("ended", () => {
     lyrics.loop++;
     stopLyrics();
-    audioPlayer.removeEventListener("play", playLyrics)
-    audioPlayer.removeEventListener("pause", stopLyrics)
+    audioPlayer.removeEventListener("play", playLyrics);
+    audioPlayer.removeEventListener("pause", stopLyrics);
     audioPlayer.addEventListener("timeupdate", startAtTwelve);
 });
 
