@@ -13,7 +13,7 @@ const unmuteIcon = document.querySelector("#unmute-icon");
 const muteIcon = document.querySelector("#mute-icon");
 const volumeIcons = [unmuteIcon, muteIcon]
 const volumeSlider = document.querySelector("#volume-slider");
-let prevVolume = 50;
+let prevVolume = 0.5;
 
 let isIntroDone = false
 
@@ -36,6 +36,7 @@ playButton.addEventListener("click", () => {
 })
 
 muteButton.addEventListener("click", () => {
+    console.log(volumeSlider.value, prevVolume);
     if (volumeSlider.value == volumeSlider.min) {
         volumeSlider.value = prevVolume;
     }
@@ -43,8 +44,22 @@ muteButton.addEventListener("click", () => {
         prevVolume = volumeSlider.value;
         volumeSlider.value = volumeSlider.min;
     }
+    changeVolume();
 })
 
+volumeSlider.addEventListener("input", changeVolume);
+
+
+function changeVolume() {
+    audioPlayer.volume = volumeSlider.value;
+    if (volumeSlider.value == volumeSlider.min) {
+        ChangeIcon(muteIcon, volumeIcons);
+    }
+    else {
+        ChangeIcon(unmuteIcon, volumeIcons);
+
+    }
+}
 
 function playLyrics() {
     if (isIntroDone) {

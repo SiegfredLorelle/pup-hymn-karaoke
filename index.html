@@ -69,7 +69,7 @@
             </marquee>
 
             <!-- STICK AUDIO TO THE BOTTOM, HIDE WHEN INACTIVE, PLAY MARQUEE WHEN PLAYED -->
-            <audio id="audio-player" controls controlslist="noremoteplayback noplaybackrate" autoplay="true">
+            <audio id="audio-player" controls controlslist="noremoteplayback noplaybackrate">
                 <source src="/audio/Imno ng PUP (The PUP Hymn).mp3" type="audio/mpeg">
                 Sorry, your browser doesn't support HTML audio tag.
             </audio>
@@ -95,7 +95,7 @@
                             volume_off
                         </span>
                     </button>
-                    <input id="volume-slider" type="range" min="1" max="100">
+                    <input id="volume-slider" type="range" min="0" max="1" step="0.01">
                 </div>
 
             </div>
