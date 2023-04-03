@@ -26,6 +26,14 @@ function stopLyrics() {
     lyrics.stop();
 }
 
+audioPlayer.addEventListener("ended", () => {
+    lyrics.loop++;
+    stopLyrics();
+    audioPlayer.removeEventListener("play", playLyrics)
+    audioPlayer.removeEventListener("pause", stopLyrics)
+    audioPlayer.addEventListener("timeupdate", startAtTwelve);
+});
+
 
 
 
