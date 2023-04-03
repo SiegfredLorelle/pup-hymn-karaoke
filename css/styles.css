@@ -1,5 +1,6 @@
 * {
     box-sizing: border-box;
+    vertical-align: middle;
     margin: 0;
     padding: 0;
     background-color: #202124;
@@ -34,3 +35,9 @@ main > marquee {
     max-height: 50vh;
 }
 
+
+main > #audio-controls {
+    display: flex;
+    justify-content:center;
+    margin: 3rem;
+}
