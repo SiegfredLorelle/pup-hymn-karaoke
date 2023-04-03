@@ -61,7 +61,21 @@ main > #audio-controls > #play-button,
 main > #audio-controls > #volume > #mute-button {
     border-radius: 50px;
     background-color: #cbcbcc;
+    display: grid;
+
 }
+
+
+main > #audio-controls > #play-button > #play-icon,
+main > #audio-controls > #play-button > #pause-icon,
+main > #audio-controls > #play-button > #replay-icon,
+main > #audio-controls > #volume > #mute-button > #unmute-icon,
+main > #audio-controls > #volume > #mute-button > #mute-icon {
+    grid-column: 1;
+    grid-row: 1;
+    visibility: hidden;
+}
+
 
 main > #audio-controls > #play-button:hover,
 main > #audio-controls > #volume > #mute-button:hover {
@@ -74,6 +88,7 @@ main > #audio-controls > #volume > #mute-button > span {
 }
 main > #audio-controls > #volume {
     margin-left: auto;
+    display: flex;
 }
 
 main > #audio-controls > #volume > #volume-slider {

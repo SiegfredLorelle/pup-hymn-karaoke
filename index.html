@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tl">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -76,14 +76,23 @@
             
             <div id="audio-controls">
                 <button id="play-button">
-                    <span class="material-symbols-rounded">
+                    <span class="material-symbols-rounded" id="play-icon">
                         play_arrow
+                    </span>
+                    <span class="material-symbols-rounded" id="replay-icon">
+                        replay
+                    </span>
+                    <span class="material-symbols-rounded" id="pause-icon">
+                        pause
                     </span>
                 </button>
                 <div id="volume">
                     <button id="mute-button">
-                        <span class="material-symbols-rounded">
+                        <span class="material-symbols-rounded" id="unmute-icon">
                             volume_up
+                        </span>
+                        <span class="material-symbols-rounded" id="mute-icon">
+                            volume_off
                         </span>
                     </button>
                     <input id="volume-slider" type="range" min="1" max="100">
