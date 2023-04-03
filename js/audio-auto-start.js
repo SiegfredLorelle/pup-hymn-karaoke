@@ -7,11 +7,13 @@ const muteButton = document.querySelector("#mute-button");
 const playIcon = document.querySelector("#play-icon");
 const pauseIcon = document.querySelector("#pause-icon");
 const replayIcon = document.querySelector("#replay-icon");
+const playIcons = [playIcon, pauseIcon, replayIcon]
+
 const unmuteIcon = document.querySelector("#unmute-icon");
 const muteIcon = document.querySelector("#mute-icon");
-
-const playIcons = [playIcon, pauseIcon, replayIcon]
 const volumeIcons = [unmuteIcon, muteIcon]
+const volumeSlider = document.querySelector("#volume-slider");
+let prevVolume = 50;
 
 let isIntroDone = false
 
@@ -25,12 +27,21 @@ playButton.addEventListener("click", () => {
         audioPlayer.play();
         playLyrics();
         ChangeIcon(pauseIcon, playIcons);
-
     }
     else {
         lyrics.stop();
         audioPlayer.pause();
         ChangeIcon(playIcon, playIcons);
+    }
+})
+
+muteButton.addEventListener("click", () => {
+    if (volumeSlider.value == volumeSlider.min) {
+        volumeSlider.value = prevVolume;
+    }
+    else {
+        prevVolume = volumeSlider.value;
+        volumeSlider.value = volumeSlider.min;
     }
 })
 
