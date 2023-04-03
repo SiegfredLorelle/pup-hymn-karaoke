@@ -15,12 +15,15 @@ const volumeIcons = [unmuteIcon, muteIcon]
 const volumeSlider = document.querySelector("#volume-slider");
 let prevVolume = 0.5;
 
+const audioProgressBar = document.querySelector("#audio-progress");
+
 let isIntroDone = false
 
 
 lyrics.stop();
 playIcon.style.visibility = "visible";
 unmuteIcon.style.visibility = "visible";
+// audioProgressBar.max = audioPlayer.duration;
 
 playButton.addEventListener("click", () => {
     if (audioPlayer.paused) {
@@ -99,7 +102,9 @@ function ChangeIcon(iconToActivate, iconGroup) {
 }
 
 
-
+audioPlayer.addEventListener("timeupdate", () => {
+    audioProgressBar.value = audioPlayer.currentTime / audioPlayer.duration;
+})
 
 
 
