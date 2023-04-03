@@ -3,7 +3,6 @@
     vertical-align: middle;
     margin: 0;
     padding: 0;
-    background-color: #202124;
     color: #f3f3f3;
     font-family: 'IBM Plex Sans', sans-serif;
     font-weight: 400;
@@ -11,8 +10,14 @@
 
 }
 
+body {
+    background-color: #202124;
+
+}
+
 header {
-    background-color: rgba(29, 25, 29, 0.2);
+    background-color: rgba(29, 25, 29);
+    
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -26,6 +31,7 @@ header {
 main {
     padding: 15px 5%;
     text-align: center;
+    background-color: #202124;
 }
 
 main > marquee {
@@ -38,6 +44,24 @@ main > marquee {
 
 main > #audio-controls {
     display: flex;
-    justify-content:center;
-    margin: 3rem;
+    background-color: #cbcbcc;
+    border-radius: 50px;
+    padding: 1rem;
+    max-width: 300px;
+    margin: auto;
+}
+
+main > #audio-controls > span {
+    background-color: #cbcbcc;
+    color: #202124;
+}
+main > #audio-controls > #volume {
+    background-color: #cbcbcc;
+    margin-left: auto;
+}
+
+main > #audio-controls > #volume > span {
+    background-color: #cbcbcc;
+    color: #202124;
+    justify-self: end;
 }
