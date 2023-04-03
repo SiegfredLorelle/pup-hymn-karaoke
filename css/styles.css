@@ -21,11 +21,11 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 10%;
+    padding: 10px 10%;
 }
 
 #pup-logo {
-    width: 2rem;
+    width: 3rem;
 }
 
 main {
@@ -49,13 +49,20 @@ main > #audio-progress::-webkit-progress-value {
     transition: width 0.5s ease;
 }
 
-main > marquee {
-    text-align: center;
-    line-height: 300%;
-    margin: 3rem;
-    max-height: 50vh;
+main > #hymn-title {
+    padding: 2rem;
 }
 
+main > #title-lyric-break {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+main > #lyrics {
+    text-align: center;
+    line-height: 300%;
+    max-height: 50vh;
+}
 
 main > #audio-controls {
     display: flex;
@@ -78,9 +85,7 @@ main > #audio-controls > #volume > #mute-button {
     border-radius: 50px;
     background-color: #cbcbcc;
     display: grid;
-
 }
-
 
 main > #audio-controls > #play-button > #play-icon,
 main > #audio-controls > #play-button > #pause-icon,
@@ -91,9 +96,7 @@ main > #audio-controls > #volume > #mute-button > #mute-icon {
     grid-row: 1;
     visibility: hidden;
     color: #202124;
-
 }
-
 
 main > #audio-controls > #play-button:hover,
 main > #audio-controls > #volume > #mute-button:hover {

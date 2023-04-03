@@ -21,6 +21,7 @@
     <body>
         <header>
             <img id="pup-logo" src="/img/PUP-logo.png" alt="PUP Logo">
+            <!-- <> -->
             <span class="material-symbols-rounded">
                 light_mode
             </span>
@@ -31,8 +32,12 @@
         <main>
             <progress id="audio-progress"></progress>
 
-            <h1>Imno ng PUP</h1>
-            <h4>S. Calabig, S. Roldan, and R. Amaranto</h4>
+            <div id="hymn-title">
+                <h1>Imno ng PUP</h1>
+                <caption>S. Calabig, S. Roldan, and R. Amaranto</caption>
+            </div>
+
+            <hr id="title-lyric-break">
 
             <marquee id="lyrics" direction="up" loop=1 scrollamount="3">
                 Sintang Paaralan
@@ -71,7 +76,7 @@
             </marquee>
 
             <!-- STICK AUDIO TO THE BOTTOM, HIDE WHEN INACTIVE, PLAY MARQUEE WHEN PLAYED -->
-            <audio id="audio-player" controls controlslist="noremoteplayback noplaybackrate">
+            <audio id="audio-player">
                 <source src="/audio/Imno ng PUP (The PUP Hymn).mp3" type="audio/mpeg">
                 Sorry, your browser doesn't support HTML audio tag.
             </audio>
@@ -111,7 +116,6 @@
 </html>
 
 <!-- TODO: -->
-<!-- ADD A BAR SHOWING THE PROGRESS OF THE AUDIO -->
 <!-- TEST AUTOPLAY ON DIFFERENT BROWSERS -->
 <!-- ADD FAVICON -->
 <!-- CHANGE POS OF ITEMS IN NAV (PUP LOGO CENTER, HAMBURGER LEFT, DARK MODE RIGHT) -->
@@ -119,4 +123,4 @@
 <!-- HAMBURGER -->
 <!-- CREATE SHORTCUTS (F to Play, M to mute) -->
 <!-- TEST IF LYRICS IS IN SYNCH  WITH AUDIO -->
-<!-- HIDE VOL UI WHEN INACTIVE  -->
+<!-- STICK VOL UI AT BTM AND HIDE WHEN INACTIVE  -->
