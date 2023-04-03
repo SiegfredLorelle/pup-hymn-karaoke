@@ -1,38 +1,51 @@
-const audioPlayer = document.querySelector("#audio-player");
 const lyrics = document.querySelector("#lyrics");
+const audioPlayer = document.querySelector("#audio-player");
+const playButton = document.querySelector("#play-button");
+const muteButton = document.querySelector("#mute-button");
+
+let isIntroDone = false
 
 
 lyrics.stop();
 
+playButton.addEventListener("click", () => {
+    if (audioPlayer.paused) {
+        audioPlayer.play();
+        playLyrics();
+    }
+    else {
+        lyrics.stop();
+        audioPlayer.pause();
+    }
+})
 
 
-
-audioPlayer.addEventListener("timeupdate", startAtTwelve);
-
-
-function startAtTwelve() {
-    if (audioPlayer.currentTime >= 12.0) {
+function playLyrics() {
+    console.log(isIntroDone);
+    if (isIntroDone) {
         lyrics.start();
-        audioPlayer.addEventListener("play", playLyrics);
-        audioPlayer.addEventListener("pause", stopLyrics);
-        audioPlayer.removeEventListener("timeupdate", startAtTwelve);
     }
 }
 
-function playLyrics() {
-    lyrics.start();
+audioPlayer.addEventListener("timeupdate", detectLyricsStart)
+
+function detectLyricsStart() {
+    if (audioPlayer.currentTime >= 12.0) {
+        isIntroDone = true;
+        playLyrics();
+        audioPlayer.removeEventListener("timeupdate", detectLyricsStart)
+    }
 }
-function stopLyrics() {
-    lyrics.stop();
-}
+
+
 
 audioPlayer.addEventListener("ended", () => {
     lyrics.loop++;
-    stopLyrics();
-    audioPlayer.removeEventListener("play", playLyrics);
-    audioPlayer.removeEventListener("pause", stopLyrics);
-    audioPlayer.addEventListener("timeupdate", startAtTwelve);
+    lyrics.stop();
+    isIntroDone = false;
+    audioPlayer.addEventListener("timeupdate", detectLyricsStart);
 });
+
 
 
 
