@@ -57,19 +57,29 @@ button {
     border: none;
 }
 
-main > #audio-controls > #play-button {
+main > #audio-controls > #play-button,
+main > #audio-controls > #volume > #mute-button {
     border-radius: 50px;
     background-color: #cbcbcc;
 }
 
-main > #audio-controls > #play-button:hover {
+main > #audio-controls > #play-button:hover,
+main > #audio-controls > #volume > #mute-button:hover {
     background-color: rgba(172, 172, 172, 0.5);
 }
 
 main > #audio-controls > #play-button > span,
-main > #audio-controls > #volume > span {
+main > #audio-controls > #volume > #mute-button > span {
     color: #202124;
 }
 main > #audio-controls > #volume {
     margin-left: auto;
 }
+
+main > #audio-controls > #volume > #volume-slider {
+    accent-color: #202124;
+    cursor: pointer;
+}
+
+
+
