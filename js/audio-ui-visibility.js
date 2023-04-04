@@ -4,14 +4,17 @@ const audioControls = document.querySelector("#audio-controls");
 
 let secsSinceLastAction = 0;
 const secsToHideAudioControls = 3;
+let audioControlsIsActive = true;
+audioControls.classList.remove("slide-in");
+
 
 setInterval(incSecsSinceLastAction, 1000);
 
 function incSecsSinceLastAction() {
     secsSinceLastAction++;
-    console.log(secsSinceLastAction);
     if (secsSinceLastAction >= secsToHideAudioControls && !audioPlayer.paused) {
-        audioControls.style.visibility = "hidden";
+        restartAnimation("slide-out");
+
     }
 }
 
@@ -27,14 +30,34 @@ actions = [
 actions.forEach( activity => {
     document.addEventListener(activity, () => {
         secsSinceLastAction = 0;
-        audioControls.style.visibility = "visible";
+        restartAnimation("slide-in");
     });
 });
 
 
 audioPlayer.addEventListener("ended", () => {
-    audioControls.style.visibility = "visible";
+    restartAnimation("slide-in");
 });
+
+function restartAnimation(animation) {
+    if (animation == "slide-out" && audioControlsIsActive || 
+        animation == "slide-in" && !audioControlsIsActive) {
+
+            audioControls.classList.forEach(cls => {
+            audioControls.classList.remove(cls);
+        });
+
+        void audioControls.offsetHeight;
+        audioControls.classList.add(animation);
+
+        if (animation == "slide-out") {
+            audioControlsIsActive = false;
+        }
+        else {
+            audioControlsIsActive = true;
+        }
+    }
+}
 
 
 

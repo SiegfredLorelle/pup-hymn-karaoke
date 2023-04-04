@@ -1,4 +1,5 @@
-* {
+body {
+    background-color: #202124;
     box-sizing: border-box;
     vertical-align: middle;
     margin: 0;
@@ -7,11 +8,6 @@
     font-family: 'IBM Plex Sans', sans-serif;
     font-weight: 400;
     text-decoration: none;
-
-}
-
-body {
-    background-color: #202124;
 
 }
 
@@ -66,17 +62,44 @@ main > #lyrics {
 
 main > #audio-controls {
     display: flex;
-    align-items: center;
     background-color: #cbcbcc;
     border-radius: 50px;
     padding: 1rem;
-    width: 300px;
-    margin: auto;
+    width: 275px;
     position: fixed;
     bottom: 2rem;
     left: 50%;
     transform: translate(-50%);
 }
+
+main > .slide-in {
+    animation: 0.5s ease-in slide-in both;
+}
+
+main > .slide-out {
+    animation: 0.5s ease-out slide-out both;
+}
+
+@keyframes slide-in {
+    from {
+        transform: translate(-50%, 175%);
+    }
+    to {
+        transform: translate(-50%, -50%);
+    }
+}
+
+@keyframes slide-out {
+    from {
+        transform: translate(-50%, -50%);
+    }
+    to {
+        transform: translate(-50%, 175%);
+    }
+}
+
+
+
 
 button {
     padding: 3px;
