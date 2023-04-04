@@ -70,8 +70,12 @@ main > #audio-controls {
     background-color: #cbcbcc;
     border-radius: 50px;
     padding: 1rem;
-    max-width: 300px;
+    width: 300px;
     margin: auto;
+    position: fixed;
+    bottom: 2rem;
+    left: 50%;
+    transform: translate(-50%);
 }
 
 button {
@@ -112,6 +116,3 @@ main > #audio-controls > #volume > #volume-slider {
     accent-color: #202124;
     cursor: pointer;
 }
-
-
-
