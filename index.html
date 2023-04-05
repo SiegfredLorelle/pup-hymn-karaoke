@@ -6,23 +6,25 @@
         <meta name="description" content="PUP Hymn with audio and scrolling text">
         <meta name="author" content="Siegfred Lorelle C. Mina">
         <!-- <link rel="icon" href="">TODO: FAVICON -->
-
+        
+        <!-- Icons from Google Font -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,700,1,0">
         <!-- Fonts from Google Font -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <!-- Icons from Google Font -->
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0">
         <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap" rel="stylesheet">
-
-        <link rel="stylesheet" href="/css/styles.css">
+        
+        <link rel="stylesheet" href="css/styles.css">
         <title>PUP Hymn</title>
     </head>
 
     <body>
         <header>
-            <img src="" alt="Hamburger">
             <!-- TODO: HAMUBERGER NAV  -->
-            <img id="pup-logo" src="/img/PUP-logo.png" alt="PUP Logo">
+            <span class="material-symbols-rounded">
+                menu
+                </span>
+            <img id="pup-logo" src="img/PUP-logo.png" alt="PUP Logo">
             <span class="material-symbols-rounded">
                 light_mode
             </span>
@@ -75,7 +77,7 @@
             </marquee>
 
             <audio id="audio-player">
-                <source src="/audio/Imno ng PUP (The PUP Hymn).mp3" type="audio/mpeg">
+                <source src="audio/Imno ng PUP (The PUP Hymn).mp3" type="audio/mpeg">
                 Sorry, your browser doesn't support HTML audio tag.
             </audio>
             
@@ -108,14 +110,13 @@
             <!-- TODO: FOOTER -->
     </body>
 
-    <script src="/js/audio-auto-start.js"></script>
-    <script src="/js/audio-ui-visibility.js"></script>
+    <script src="js/audio-auto-start.js"></script>
+    <script src="js/audio-ui-visibility.js"></script>
 </html>
 
 <!-- TODO: -->
 <!-- TEST AUTOPLAY ON DIFFERENT BROWSERS -->
 <!-- ADD FAVICON -->
-<!-- CHANGE POS OF ITEMS IN NAV (PUP LOGO CENTER, HAMBURGER LEFT, DARK MODE RIGHT) -->
 <!-- DARK MODE -->
 <!-- HAMBURGER -->
 <!-- CREATE SHORTCUTS (F to Play, M to mute) -->
@@ -123,4 +124,5 @@
 <!-- ADD BG IMG (MAYBE PIC OF PUP) WITH GRADIENT GOING DOWN -->
 <!-- FOOTER -->
 <!-- RENAME AUDIO AUTO START JS TO WHTVR IT DOES -->
-<!-- RENAME AUDIO AUTO START JS TO WHTVR IT DOES -->
+<!-- CHANGE LYRICS HEIGHT IF ON DEVICE HEIGHT IS SMALL -->
+<!-- HIDE LYRICS IF AUDIO IS FINISHED, REACTIVATE AGAIN IF AUDIO IS PLAYED (TO ENSURE THAT LYRICS IN TALL SCREENS WILL DISPLAY -->

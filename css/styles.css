@@ -13,7 +13,7 @@ body {
 
 header {
     background-color: rgba(29, 25, 29);
-    
+    min-height: 3rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -21,11 +21,11 @@ header {
 }
 
 #pup-logo {
-    width: 3rem;
+    width: 2.75rem;
 }
 
 main {
-    padding: 0 0;
+    padding: 0;
     text-align: center;
     background-color: #202124;
 }
@@ -46,7 +46,7 @@ main > #audio-progress::-webkit-progress-value {
 }
 
 main > #hymn-title {
-    padding: 2rem;
+    padding: 0rem 2rem 2rem;
 }
 
 main > #title-lyric-break {
@@ -57,7 +57,8 @@ main > #title-lyric-break {
 main > #lyrics {
     text-align: center;
     line-height: 300%;
-    max-height: 50vh;
+    height: 60vh;
+    margin: 0 0 2rem;
 }
 
 main > #audio-controls {
