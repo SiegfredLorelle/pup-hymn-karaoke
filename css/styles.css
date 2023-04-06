@@ -12,7 +12,7 @@ body {
 }
 
 header {
-    background-color: rgba(29, 25, 29);
+    background-color: rgb(42, 42, 48);
     min-height: 3rem;
     display: flex;
     justify-content: space-between;
@@ -103,7 +103,7 @@ main > .slide-out {
 
 
 button {
-    padding: 3px;
+    padding: 6px;
     cursor: pointer;
     border: none;
     border-radius: 50px;
@@ -111,12 +111,12 @@ button {
 }
 
 header > button {
-    background-color: rgba(29, 25, 29);
+    background-color: rgb(42, 42, 48);
     color: #f3f3f3;
 }
 
 header > button:hover {
-    background-color: rgba(65, 55, 65, 0.75);
+    background-color: rgb(50, 50, 58);
 }
 
 
