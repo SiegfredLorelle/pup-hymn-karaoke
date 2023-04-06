@@ -27,13 +27,12 @@ header {
 main {
     padding: 0;
     text-align: center;
-    background-color: #202124;
+    /* background-color: #202124;; */
 }
 
 main > #audio-progress {
     width: 100vw;
-    height: 1rem;
-    color: #020f38;
+    height: 1.25rem;
     border: none;
 }
 
@@ -119,6 +118,10 @@ header > button:hover {
     background-color: rgb(50, 50, 58);
 }
 
+header > button > span {
+    grid-column: 1;
+    grid-row: 1;
+}
 
 main > #audio-controls > #play-button,
 main > #audio-controls > #volume > #mute-button {
