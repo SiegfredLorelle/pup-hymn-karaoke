@@ -106,13 +106,28 @@ button {
     padding: 3px;
     cursor: pointer;
     border: none;
+    border-radius: 50px;
+    display: grid;
 }
+
+header > button {
+    background-color: rgba(29, 25, 29);
+    color: #f3f3f3;
+}
+
+header > button:hover {
+    background-color: rgba(65, 55, 65, 0.75);
+}
+
 
 main > #audio-controls > #play-button,
 main > #audio-controls > #volume > #mute-button {
-    border-radius: 50px;
     background-color: #cbcbcc;
-    display: grid;
+}
+
+main > #audio-controls > #play-button:hover,
+main > #audio-controls > #volume > #mute-button:hover {
+    background-color: rgba(172, 172, 172, 0.5);
 }
 
 main > #audio-controls > #play-button > #play-icon,
@@ -126,10 +141,6 @@ main > #audio-controls > #volume > #mute-button > #mute-icon {
     color: #202124;
 }
 
-main > #audio-controls > #play-button:hover,
-main > #audio-controls > #volume > #mute-button:hover {
-    background-color: rgba(172, 172, 172, 0.5);
-}
 
 main > #audio-controls > #volume {
     margin-left: auto;
