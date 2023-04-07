@@ -25,7 +25,9 @@ playIcon.style.visibility = "visible";
 unmuteIcon.style.visibility = "visible";
 // audioProgressBar.max = audioPlayer.duration;
 
-playButton.addEventListener("click", () => {
+playButton.addEventListener("click", pauseOrPlay)
+
+function pauseOrPlay() {
     if (audioPlayer.paused) {
         audioPlayer.play();
         playLyrics();
@@ -36,10 +38,12 @@ playButton.addEventListener("click", () => {
         audioPlayer.pause();
         ChangeIcon(playIcon, playIcons);
     }
-})
+}
 
-muteButton.addEventListener("click", () => {
-    console.log(volumeSlider.value, prevVolume);
+
+muteButton.addEventListener("click", muteOrUnmute)
+
+function muteOrUnmute() {
     if (volumeSlider.value == volumeSlider.min) {
         volumeSlider.value = prevVolume;
     }
@@ -48,7 +52,7 @@ muteButton.addEventListener("click", () => {
         volumeSlider.value = volumeSlider.min;
     }
     changeVolume();
-})
+}
 
 volumeSlider.addEventListener("input", changeVolume);
 
@@ -105,8 +109,3 @@ function ChangeIcon(iconToActivate, iconGroup) {
 audioPlayer.addEventListener("timeupdate", () => {
     audioProgressBar.value = audioPlayer.currentTime / audioPlayer.duration;
 })
-
-
-
-
-
