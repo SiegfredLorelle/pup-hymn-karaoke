@@ -3,7 +3,7 @@ const audioControls = document.querySelector("#audio-controls");
 // const audioPlayer = document.querySelector("#audio-player");
 
 let secsSinceLastAction = 0;
-const secsToHideAudioControls = 3;
+const secsToHideAudioControls = 2;
 let audioControlsIsActive = true;
 audioControls.classList.remove("slide-in");
 

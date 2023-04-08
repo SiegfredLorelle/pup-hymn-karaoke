@@ -2,30 +2,54 @@ const hamburgerMenuBtn = document.querySelector("#hamburger-menu-button");
 const menuNav = document.querySelector("#menu-nav");
 const main = document.querySelector("main");
 
+let IsMenuActive = false;
 console.log(main);
 
 
 hamburgerMenuBtn.addEventListener("mouseenter", () => {
-    menuNav.style.visibility = "visible";
+    
+    if (!IsMenuActive) {
+        restartMenuAnimation("slide-in-right");
+    }
+    // menuNav.style.visibility = "visible";
 });
 
 menuNav.addEventListener("mouseleave", () => {
-    menuNav.style.visibility = "hidden";
+    restartMenuAnimation("slide-in-left");
+    // menuNav.style.visibility = "hidden";
 });
 
-hamburgerMenuBtn.addEventListener("click", ShowOrHideMenu)
-
-main.addEventListener("mouseenter", () => {
-    if (menuNav.style.visibility == "visible") {
-        menuNav.style.visibility = "hidden";
+hamburgerMenuBtn.addEventListener("click", () => {
+    if (IsMenuActive) {
+        restartMenuAnimation("slide-in-left");
+    }
+    else {
+        restartMenuAnimation("slide-in-right");
     }
 })
 
-function ShowOrHideMenu() {
-    if (menuNav.style.visibility == "visible") {
-        menuNav.style.visibility = "hidden";
+main.addEventListener("mouseenter", () => {
+    console.log(IsMenuActive);
+    if (IsMenuActive) {
+        restartMenuAnimation("slide-in-left");
+        // menuNav.style.visibility = "hidden";
+        
+    }
+})
+
+
+function restartMenuAnimation(animation) {
+    menuNav.classList.forEach(cls => {
+        menuNav.classList.remove(cls);
+    });
+    void menuNav.offsetHeight;
+    menuNav.classList.add(animation);
+
+    if ("slide-in-right" == menuNav.classList[0]) {
+        IsMenuActive = true;
     }
     else {
-        menuNav.style.visibility = "visible";
+        IsMenuActive = false;
+
     }
 }

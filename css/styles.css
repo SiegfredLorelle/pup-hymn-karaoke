@@ -24,12 +24,45 @@ header {
 #menu-nav {
     width: 100px;
     padding: 1rem;
-    visibility: hidden;
+    /* visibility: hidden; */
     position: fixed;
     background-color: rgb(42, 42, 48);
-    transform: translate(15%);
-
+    transform: translate(-100%);
 }
+
+.slide-in-left {
+    animation: slide-in-left 0.25s ease-out both;
+}
+.slide-in-right {
+    animation: slide-in-right 0.25s ease-in both;
+}
+
+
+
+
+
+@keyframes slide-in-left {
+    from {
+        transform: translate(15%);
+    }
+    
+    to {
+        transform: translate(-100%);
+    }
+}
+
+@keyframes slide-in-right {
+    from {
+        transform: translate(-100%);
+    }
+    
+    to {
+        transform: translate(15%);
+    }
+
+} 
+
+
 
 
 #pup-logo {
@@ -84,11 +117,11 @@ main > #audio-controls {
 }
 
 main > .slide-in {
-    animation: 0.5s ease-in slide-in both;
+    animation: 0.25s ease-in slide-in both;
 }
 
 main > .slide-out {
-    animation: 0.5s ease-out slide-out both;
+    animation: 0.25s ease-out slide-out both;
 }
 
 @keyframes slide-in {
