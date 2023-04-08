@@ -15,10 +15,22 @@ header {
     background-color: rgb(42, 42, 48);
     min-height: 3rem;
     display: flex;
-    justify-content: space-between;
+    justify-content:space-between;
     align-items: center;
     padding: 10px 10%;
 }
+
+
+#menu-nav {
+    width: 100px;
+    padding: 1rem;
+    visibility: hidden;
+    position: fixed;
+    background-color: rgb(42, 42, 48);
+    transform: translate(15%);
+
+}
+
 
 #pup-logo {
     width: 2.75rem;
@@ -27,7 +39,6 @@ header {
 main {
     padding: 0;
     text-align: center;
-    /* background-color: #202124;; */
 }
 
 main > #audio-progress {

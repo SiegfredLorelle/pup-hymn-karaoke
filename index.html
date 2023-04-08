@@ -21,7 +21,7 @@
     <body>
         <header>
             <!-- TODO: HAMUBERGER NAV  -->
-            <button>
+            <button id="hamburger-menu-button">
                 <span class="material-symbols-rounded">
                     menu
                 </span>
@@ -35,6 +35,18 @@
                 </span>
             </button>
         </header>
+
+        <div id="menu-nav">
+                <hgroup>
+                    <h4>Links</h4>
+                    <h5>PUP Website</h5>
+                    <h5>PUP SIS</h5>
+                    <h5>PUP iApply</h5>
+                    <h5>PUP eMabini</h5>
+                </hgroup>
+                <h4>Hotkeys</h4>
+                <h4>Credits </h4>
+        </div>
         
         <main>
             <progress id="audio-progress"></progress>
@@ -119,13 +131,13 @@
     <script src="js/audio-auto-start.js"></script>
     <script src="js/audio-ui-visibility.js"></script>
     <script src="js/hotkeys.js"></script>
+    <script src="js/menu.js"></script>
 </html>
 
 <!-- TODO: -->
 <!-- TEST AUTOPLAY ON DIFFERENT BROWSERS -->
 <!-- ADD FAVICON -->
 <!-- DARK MODE -->
-<!-- HAMBURGER -->
 <!-- CREATE SHORTCUTS (F to Play, M to mute) -->
 <!-- TEST IF LYRICS IS IN SYNCH WITH AUDIO -->
 <!-- ADD BG IMG (MAYBE PIC OF PUP) WITH GRADIENT GOING DOWN -->
@@ -136,3 +148,5 @@
 <!-- HIGHLIGHT WHAT LINE NA, DIVIDE MARQUEE BY LINE, MAP AUDIO TIME SA SPAN NG MARQUEE-->
 <!-- CREATE ICO FILE INSTEEAD OF PNG/JPG -->
 <!-- Allow restarting the song via click and hotkey -->
+<!-- Add animations when opening menu (hamburger) -->
+<!-- Fix the links and items in the menu -->
