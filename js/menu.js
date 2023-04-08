@@ -9,31 +9,29 @@ console.log(main);
 hamburgerMenuBtn.addEventListener("mouseenter", () => {
     
     if (!IsMenuActive) {
+        console.log("Hover Hamburger");
         restartMenuAnimation("slide-in-right");
     }
     // menuNav.style.visibility = "visible";
 });
 
-menuNav.addEventListener("mouseleave", () => {
-    restartMenuAnimation("slide-in-left");
-    // menuNav.style.visibility = "hidden";
-});
+
 
 hamburgerMenuBtn.addEventListener("click", () => {
     if (IsMenuActive) {
+        console.log("Click habmurger (close)");
         restartMenuAnimation("slide-in-left");
     }
     else {
+        console.log("Click habmurger (open)");
         restartMenuAnimation("slide-in-right");
     }
 })
 
 main.addEventListener("mouseenter", () => {
-    console.log(IsMenuActive);
     if (IsMenuActive) {
         restartMenuAnimation("slide-in-left");
-        // menuNav.style.visibility = "hidden";
-        
+        console.log("Hover main (close)");
     }
 })
 
@@ -50,6 +48,5 @@ function restartMenuAnimation(animation) {
     }
     else {
         IsMenuActive = false;
-
     }
 }
