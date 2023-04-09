@@ -2,18 +2,34 @@ const hamburgerMenuBtn = document.querySelector("#hamburger-menu-button");
 const menuNav = document.querySelector("#menu-nav");
 const main = document.querySelector("main");
 
-
 let IsMenuActive = false;
-console.log(main);
 
 
-hamburgerMenuBtn.addEventListener("mouseenter", () => {
+const mediaSize = window.matchMedia("(min-width: 600px)");
+
+
+checkDisplaySize(mediaSize);
+mediaSize.addEventListener("change", checkDisplaySize);
+
+
+function checkDisplaySize(newSize) {
+    if (newSize.matches) {
+        console.log("BIG ENOUGH TO LISTEN TO HOVER");
+        hamburgerMenuBtn.addEventListener("mouseenter", showMenuOnHover)
+    }
+    else {
+        console.log("SMALL SO DO NOT TO LISTEN TO HOVER");
+        hamburgerMenuBtn.removeEventListener("mouseenter", showMenuOnHover)
+    }
+}
     
+
+function showMenuOnHover() {
     if (!IsMenuActive) {
         console.log("Hover Hamburger");
         restartMenuAnimation("slide-in-right");
     }
-});
+}
 
 
 
