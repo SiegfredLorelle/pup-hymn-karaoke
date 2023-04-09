@@ -2,6 +2,7 @@ const hamburgerMenuBtn = document.querySelector("#hamburger-menu-button");
 const menuNav = document.querySelector("#menu-nav");
 const main = document.querySelector("main");
 
+
 let IsMenuActive = false;
 console.log(main);
 
@@ -12,7 +13,6 @@ hamburgerMenuBtn.addEventListener("mouseenter", () => {
         console.log("Hover Hamburger");
         restartMenuAnimation("slide-in-right");
     }
-    // menuNav.style.visibility = "visible";
 });
 
 

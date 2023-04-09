@@ -25,14 +25,6 @@ header {
 }
 
 
-#menu-nav {
-    width: 8rem;
-    position: fixed;
-    background-color: rgb(42, 42, 48);
-    transform: translate(-100%);
-    border-radius: 0 25px 25px 0;
-}
-
 .slide-in-left {
     animation: slide-in-left 0.25s ease-out both;
 }
@@ -66,10 +58,11 @@ header {
 
 #menu-nav {
     width: 8rem;
-    position: fixed;
+    position: absolute;
     background-color: rgb(42, 42, 48);
     transform: translate(-100%);
-    /* border-radius: 0 25px 25px 0; */
+    border-radius: 0 25px 25px 0;
+    z-index: 0;
 }
 
 
@@ -96,30 +89,32 @@ a {
 
 main {
     padding: 0;
+    margin: auto;
     text-align: center;
+    /* width: 500px; */
 }
 
-main > #audio-progress {
+#audio-progress {
     width: 100vw;
     height: 1.25rem;
     border: none;
 }
 
-main > #audio-progress::-webkit-progress-bar {
+#audio-progress::-webkit-progress-bar {
     background: #202124;
 }
-main > #audio-progress::-webkit-progress-value {
+#audio-progress::-webkit-progress-value {
     background: #cbcbcc;
     transition: width 0.5s ease;
 }
 
 main > #hymn-title {
-    padding: 0rem 2rem 2rem;
+    padding: 2rem;
 }
 
 main > #title-lyric-break {
-    max-width: 500px;
-    margin: 0 auto;
+    max-width: 450px;
+    margin: auto;
 }
 
 main > #lyrics {
@@ -127,6 +122,9 @@ main > #lyrics {
     line-height: 300%;
     height: 60vh;
     margin: 0 0 2rem;
+    max-width: 450px;
+    /* max-width: 500px; */
+
 }
 
 main > #audio-controls {
