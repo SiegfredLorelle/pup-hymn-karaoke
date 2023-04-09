@@ -73,13 +73,16 @@ a {
 }
 
 
+
 #menu-nav > .menu-item {
-    padding: 1rem;
+    padding: 1rem 1.5rem 1rem 0.5rem;
     width: 6rem;
     border-radius: 0 25px 25px 0;
+    text-align: center;
 }
 
-#menu-nav > .menu-item:hover {
+#menu-nav > #hotkey-title:hover ~ .hotkeys,
+#menu-nav > .hotkeys:hover {
     background-color: rgb(50, 50, 58);
 }
 
@@ -88,7 +91,6 @@ a {
 }
 
 main {
-    padding: 0;
     margin: auto;
     text-align: center;
     /* width: 500px; */

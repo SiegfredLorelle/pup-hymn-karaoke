@@ -5,7 +5,6 @@ const audioControls = document.querySelector("#audio-controls");
 let secsSinceLastAction = 0;
 const secsToHideAudioControls = 2;
 let audioControlsIsActive = true;
-audioControls.classList.remove("slide-in");
 
 
 setInterval(incSecsSinceLastAction, 1000);
@@ -14,7 +13,6 @@ function incSecsSinceLastAction() {
     secsSinceLastAction++;
     if (secsSinceLastAction >= secsToHideAudioControls && !audioPlayer.paused) {
         restartAnimation("slide-out");
-
     }
 }
 
@@ -27,8 +25,8 @@ actions = [
     "touchstart",
 ]
 
-actions.forEach( activity => {
-    document.addEventListener(activity, () => {
+actions.forEach (action => {
+    document.addEventListener(action, () => {
         secsSinceLastAction = 0;
         restartAnimation("slide-in");
     });
@@ -58,6 +56,15 @@ function restartAnimation(animation) {
         }
     }
 }
+
+audioControls.addEventListener("mouseenter", () => {
+    console.log("HERE");
+    secsSinceLastAction = 0;
+});
+
+
+
+// audio
 
 
 

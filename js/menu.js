@@ -5,7 +5,7 @@ const main = document.querySelector("main");
 let IsMenuActive = false;
 
 
-const mediaSize = window.matchMedia("(min-width: 600px)");
+const mediaSize = window.matchMedia("(min-width: 1080px)");
 
 
 checkDisplaySize(mediaSize);
