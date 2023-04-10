@@ -21,13 +21,26 @@ let light_mode_colors = {
 
 }
 
-
-console.log(colorSchemeBtn);
-console.log(getComputedStyle(root).getPropertyValue("--header-bg-color"));
+// 
+// console.log(colorSchemeBtn);
+// console.log(getComputedStyle(root));
 
 
 colorSchemeBtn.addEventListener("click", () => {
-    console.log("Changing color scheme");
+    let colors;
+
+    if (isDarkMode) {
+        colors = light_mode_colors;
+        isDarkMode = false;
+    }
+    else {
+        colors = dark_mode_colors;
+        isDarkMode = true;
+    }
+
+    for (key in colors) {
+        root.style.setProperty(key, colors[key]);
+    }
 });
 
 
