@@ -8,19 +8,21 @@ let isDarkMode = true;
 let colors;
 
 let dark_mode_colors = {
-    "--header-bg-color": "#2a2a30",
-    "--header-hover-color": "#32323a",
-    "--body-bg-color": "#202124",
-    "--contrast-color": "#cbcbcc",
-    "--contrast-hover-color": "#acacac80",
+    "--header-bg-color": "rgb(42, 42, 48)",
+    "--header-hover-color": "rgb(50, 50, 58)",
+    "--body-bg-color": "rgb(32, 33, 36)",
+    "--body-bg-less-opacity-color": "rgba(32, 33, 36, 0.95)",
+    "--contrast-color": "rgb(203, 203, 204)",
+    "--contrast-hover-color": "rgba(172, 172, 172, 0.502)",
 }
 
 let light_mode_colors = {
-    "--header-bg-color": "#E8E2E2",
-    "--header-hover-color": "#d4cdcd80",
-    "--body-bg-color": "#F5F5F5",
-    "--contrast-color": "#3d3d3d",
-    "--contrast-hover-color": "#505050",
+    "--header-bg-color": "rgb(232, 226, 226)",
+    "--header-hover-color": "rgba(212, 205, 205, 0.5)",
+    "--body-bg-color": "rgb(245, 245, 245)",
+    "--body-bg-less-opacity-color": "rgba(245, 245, 245, 0.875)",
+    "--contrast-color": "rgb(61, 61, 61)",
+    "--contrast-hover-color": "rgb(80, 80, 80)",
 
 
 }

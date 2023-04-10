@@ -1,11 +1,21 @@
 
 :root {
-    --header-bg-color: #2a2a30;
-    --header-hover-color: #32323a;
-    --body-bg-color: #202124;
-    --contrast-color: #cbcbcc;
-    --contrast-hover-color: #acacac80;
+    --header-bg-color: rgb(42, 42, 48);
+    --header-hover-color: rgb(50, 50, 58);
+    --body-bg-color: rgb(32, 33, 36);
+    --body-bg-less-opacity-color: rgba(32, 33, 36, 0.95);
+    --contrast-color: rgb(203, 203, 204);
+    --contrast-hover-color: rgba(172, 172, 172, 0.502);
 }
+
+/* :root {
+    --header-bg-color: rgb(232, 226, 226);
+    --header-hover-color: rgba(212, 205, 205, 0.5);
+    --body-bg-color: rgb(245, 245, 245);
+    --body-bg-less-opacity-color: rgba(245, 245, 245, 0.9);
+    --contrast-color: rgb(61, 61, 61);
+    --contrast-hover-color: rgb(80, 80, 80);
+} */
 
 
 * {
@@ -97,10 +107,25 @@ header {
     visibility: hidden;
 }
 
+/* main { */
+ 
+    /* background-image: url(/img/pup-pylon.png);
+    background-color: linear; */
+    
+/* } */
+
 main {
+    background-repeat: no-repeat;
+    background-size:contain;
+    background-position: center;
+    background-image: linear-gradient(
+            to bottom,
+            var(--body-bg-less-opacity-color),
+            var(--body-bg-color)),
+        url("/img/pup-pylon.png");
     margin: auto;
     text-align: center;
-    /* width: 500px; */
+    
 }
 
 #audio-progress {
