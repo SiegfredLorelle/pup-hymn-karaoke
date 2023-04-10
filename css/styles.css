@@ -101,18 +101,22 @@ header {
 
 #pup-logo {
     width: 2.75rem;
+    cursor:pointer ;
+}
+
+#pup-logo:hover {
+    transform: rotate(360deg) scale(1.125);
+    transition: all 0.5s ease-in-out;
+}
+
+#pup-logo:not(hover) {
+    transform: rotate(-360deg) scale(1);
+    transition: all 0.5s ease-in-out;
 }
 
 #dark-mode-icon {
     visibility: hidden;
 }
-
-/* main { */
- 
-    /* background-image: url(/img/pup-pylon.png);
-    background-color: linear; */
-    
-/* } */
 
 main {
     background-repeat: no-repeat;
