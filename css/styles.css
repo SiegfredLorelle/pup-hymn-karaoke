@@ -93,6 +93,10 @@ header {
     width: 2.75rem;
 }
 
+#dark-mode-icon {
+    visibility: hidden;
+}
+
 main {
     margin: auto;
     text-align: center;
@@ -197,6 +201,7 @@ header > button > span {
 main > #audio-controls > #play-button,
 main > #audio-controls > #volume > #mute-button {
     background-color: var(--contrast-color);
+    margin: 0 0.5rem 0 0;
 }
 
 main > #audio-controls > #play-button:hover,
