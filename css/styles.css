@@ -171,14 +171,19 @@ main > #lyrics {
 main > #audio-controls {
     display: flex;
     background-color: var(--contrast-color);
+    justify-content: space-between;
     border-radius: 50px;
-    padding: 0.5rem 1rem;
-    width: 275px;
-    max-width: 85vw;
+    padding: 0.5rem;
+    width: 350px;
+    max-width: 90vw;
     position: fixed;
     bottom: 2rem;
     left: 50%;
 }
+
+
+
+
 
 main > .slide-in-up {
     animation: 0.25s ease-in slide-in-up both;
@@ -231,19 +236,24 @@ header > button > span {
 }
 
 main > #audio-controls > #play-button,
+main > #audio-controls > #replay-button,
 main > #audio-controls > #volume > #mute-button {
     background-color: var(--contrast-color);
-    margin: 0 0.5rem 0 0;
+    margin: 0 0.5rem;
 }
 
+
+
 main > #audio-controls > #play-button:hover,
+main > #audio-controls > #replay-button:hover,
 main > #audio-controls > #volume > #mute-button:hover {
     background-color: var(--contrast-hover-color);
 }
 
 main > #audio-controls > #play-button > #play-icon,
 main > #audio-controls > #play-button > #pause-icon,
-main > #audio-controls > #play-button > #replay-icon,
+/* main > #audio-controls > #play-button > #replay-icon, */
+main > #audio-controls > #replay-button > #replay-icon,
 main > #audio-controls > #volume > #mute-button > #unmute-icon,
 main > #audio-controls > #volume > #mute-button > #mute-icon {
     grid-column: 1;
@@ -261,4 +271,16 @@ main > #audio-controls > #volume {
 main > #audio-controls > #volume > #volume-slider {
     accent-color: var(--body-bg-color);
     cursor: pointer;
+    margin-right: 0.75rem;
+}
+
+@media (max-width: 350px) {
+    
+    main > #audio-controls > #volume {
+        margin-left: 0;
+    }
+    
+    main > #audio-controls > #volume > #volume-slider {
+        display: none;
+    }
 }

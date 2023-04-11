@@ -5,12 +5,14 @@ let lyrics = document.querySelector("#lyrics");
 const audioPlayer = document.querySelector("#audio-player");
 
 const playButton = document.querySelector("#play-button");
+const replayButton = document.querySelector("#replay-button");
 const muteButton = document.querySelector("#mute-button");
 
 const playIcon = document.querySelector("#play-icon");
 const pauseIcon = document.querySelector("#pause-icon");
+const playIcons = [playIcon, pauseIcon]
+
 const replayIcon = document.querySelector("#replay-icon");
-const playIcons = [playIcon, pauseIcon, replayIcon]
 
 const unmuteIcon = document.querySelector("#unmute-icon");
 const muteIcon = document.querySelector("#mute-icon");
@@ -22,12 +24,11 @@ const audioProgressBar = document.querySelector("#audio-progress");
 
 let isIntroDone = false
 
-// lyrics.innerHTML = " "
-
 
 lyrics.stop();
 playIcon.style.visibility = "visible";
 unmuteIcon.style.visibility = "visible";
+replayIcon.style.visibility = "visible";
 
 playButton.addEventListener("click", pauseOrPlay)
 
@@ -82,6 +83,7 @@ function restartLyrics() {
     let new_lyrics = lyrics.cloneNode(true);
     lyrics.replaceWith(new_lyrics);
     lyrics = new_lyrics
+    // isIntroDone = false;
 }
 
 audioPlayer.addEventListener("timeupdate", detectLyricsStart)
@@ -106,15 +108,31 @@ function detectLyricsStart() {
 //     }
 // }
 
-
-
-
-audioPlayer.addEventListener("ended", () => {
+function resetVariables() {
     lyrics.style.visibility = "hidden";
     lyrics.stop();
     isIntroDone = false;
     audioPlayer.addEventListener("timeupdate", detectLyricsStart);
-    ChangeIcon(replayIcon, playIcons);
+
+}
+
+replayButton.addEventListener("click", () => {
+    restartLyrics();
+    resetVariables();
+    audioPlayer.currentTime = 0.0;
+    audioPlayer.play();
+    playButton.style.display = "grid";
+});
+
+
+audioPlayer.addEventListener("ended", () => {
+    // lyrics.style.visibility = "hidden";
+    resetVariables();
+    // lyrics.stop();
+    // isIntroDone = false;
+    // audioPlayer.addEventListener("timeupdate", detectLyricsStart);
+    // ChangeIcon(replayIcon, playIcons);
+    playButton.style.display = "none";
 });
 
 function ChangeIcon(iconToActivate, iconGroup) {
@@ -127,6 +145,15 @@ function ChangeIcon(iconToActivate, iconGroup) {
         }
     }
 }
+
+
+
+
+// audioPlayer.addEventListener("play", () => {
+//     if (playButton.style.display != "grid") {
+//         playButton.style.display = "grid";
+//     }
+// });
 
 
 
