@@ -11,7 +11,7 @@ document.addEventListener("keydown", (pressed) => {
             muteOrUnmute();
             break;
         case "r":
-            // Restart Song
+            replay();
             break;
     }
     })

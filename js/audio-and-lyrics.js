@@ -116,13 +116,16 @@ function resetVariables() {
 
 }
 
-replayButton.addEventListener("click", () => {
+function replay() {
     restartLyrics();
     resetVariables();
     audioPlayer.currentTime = 0.0;
     audioPlayer.play();
     playButton.style.display = "grid";
-});
+
+}
+
+replayButton.addEventListener("click", replay);
 
 
 audioPlayer.addEventListener("ended", () => {
