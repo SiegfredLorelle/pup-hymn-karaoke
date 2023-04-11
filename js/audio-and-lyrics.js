@@ -111,8 +111,6 @@ function replay() {
     resetVariables();
     audioPlayer.currentTime = 0.0;
     audioPlayer.play();
-    // playButton.style.display = "grid";
-
 }
 
 /* Hide the play/pause button when the audio ended */
