@@ -27,19 +27,38 @@ playIcon.style.visibility = "visible";
 unmuteIcon.style.visibility = "visible";
 replayIcon.style.visibility = "visible";
 
-playButton.addEventListener("click", pauseOrPlay)
+
+/* Pause both the audio and the lyrics when the page is not visible */
+document.addEventListener("visibilitychange", () => {
+    if (document.visibilityState == "hidden") {
+        pause();
+    }
+});
+
+
 /* Pause or play both the audio and the lyrics */
+playButton.addEventListener("click", pauseOrPlay)
 function pauseOrPlay() {
     if (audioPlayer.paused) {
-        audioPlayer.play();
-        playLyrics();
-        ChangeIcon(pauseIcon, playIcons);
+        play();
     }
     else {
-        audioPlayer.pause();
-        lyrics.stop();
-        ChangeIcon(playIcon, playIcons);
+        pause();
     }
+}
+
+/* Pause both audio and lyrics */
+function pause() {
+    audioPlayer.pause();
+    lyrics.stop();
+    ChangeIcon(playIcon, playIcons);
+}
+
+/* Play both audio and lyrics */
+function play() {
+    audioPlayer.play();
+    playLyrics();
+    ChangeIcon(pauseIcon, playIcons);
 }
 
 
