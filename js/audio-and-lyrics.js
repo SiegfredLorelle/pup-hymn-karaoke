@@ -92,9 +92,19 @@ function detectLyricsStart() {
         isIntroDone = true;
         // playLyrics();
         restartLyrics();
-        audioPlayer.removeEventListener("timeupdate", detectLyricsStart)
+        audioPlayer.removeEventListener("timeupdate", detectLyricsStart);
+        // audioPlayer.addEventListener("timeupdate", detectLyricsEnd);
+
     }
 }
+
+// function detectLyricsEnd() {
+//     if (audioPlayer.currentTime >= 108.0) {
+//         lyrics.style.visibility = "hidden";
+//         audioPlayer.removeEventListener("timeupdate", detectLyricsEnd);
+
+//     }
+// }
 
 
 
