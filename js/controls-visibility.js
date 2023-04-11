@@ -10,7 +10,6 @@ let isPointerOverControls = false;
 setInterval(checkLastAction, 250);
 function checkLastAction() {
     secsSinceLastAction += 0.250;
-    console.log(secsSinceLastAction);
     if (secsSinceLastAction >= secsToHideAudioControls && 
         !audioPlayer.paused && !isPointerOverControls) {
         restartAnimation("slide-out-down");
