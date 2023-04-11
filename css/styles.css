@@ -126,7 +126,7 @@ main {
             to bottom,
             var(--body-bg-less-opacity-color),
             var(--body-bg-color)),
-        url("/img/pup-pylon.png");
+        url("../img/pup-pylon.png");
     margin: auto auto 6.5rem;
     text-align: center;
     
