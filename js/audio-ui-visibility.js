@@ -15,7 +15,7 @@ function incSecsSinceLastAction() {
     console.log(secsSinceLastAction);
     if (secsSinceLastAction >= secsToHideAudioControls && 
         !audioPlayer.paused && !isPointerOverControls) {
-        restartAnimation("slide-out");
+        restartAnimation("slide-out-down");
     }
 }
 
@@ -31,18 +31,18 @@ actions = [
 actions.forEach(action => {
     document.addEventListener(action, () => {
         secsSinceLastAction = 0.0;
-        restartAnimation("slide-in");
+        restartAnimation("slide-in-up");
     });
 });
 
 
 audioPlayer.addEventListener("ended", () => {
-    restartAnimation("slide-in");
+    restartAnimation("slide-in-up");
 });
 
 function restartAnimation(animation) {
-    if (animation == "slide-out" && audioControlsIsActive || 
-        animation == "slide-in" && !audioControlsIsActive) {
+    if (animation == "slide-out-down" && audioControlsIsActive || 
+        animation == "slide-in-up" && !audioControlsIsActive) {
 
             audioControls.classList.forEach(cls => {
             audioControls.classList.remove(cls);
@@ -51,7 +51,7 @@ function restartAnimation(animation) {
         void audioControls.offsetHeight;
         audioControls.classList.add(animation);
 
-        if (animation == "slide-out") {
+        if (animation == "slide-out-down") {
             audioControlsIsActive = false;
         }
         else {

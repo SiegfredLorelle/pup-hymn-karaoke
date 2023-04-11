@@ -161,7 +161,6 @@ main > #lyrics {
     height: 60vh;
     margin: 0 0 2rem;
     max-width: 450px;
-    /* max-width: 500px; */
 
 }
 
@@ -174,32 +173,31 @@ main > #audio-controls {
     position: fixed;
     bottom: 2rem;
     left: 50%;
-    transform: translate(-50%);
 }
 
-main > .slide-in {
-    animation: 0.25s ease-in slide-in both;
+main > .slide-in-up {
+    animation: 0.25s ease-in slide-in-up both;
 }
 
-main > .slide-out {
-    animation: 0.25s ease-out slide-out both;
+main > .slide-out-down {
+    animation: 0.25s ease-out slide-out-down both;
 }
 
-@keyframes slide-in {
+@keyframes slide-in-up {
     from {
-        transform: translate(-50%, 175%);
+        transform: translate(-50%, 200%);
     }
     to {
-        transform: translate(-50%, -50%);
+        transform: translate(-50%, -100%);
     }
 }
 
-@keyframes slide-out {
+@keyframes slide-out-down {
     from {
-        transform: translate(-50%, -50%);
+        transform: translate(-50%, -100%);
     }
     to {
-        transform: translate(-50%, 175%);
+        transform: translate(-50%, 200%);
     }
 }
 
