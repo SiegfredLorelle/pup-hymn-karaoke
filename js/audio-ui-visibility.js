@@ -2,16 +2,19 @@ const audioControls = document.querySelector("#audio-controls");
 // Audio player is already initialized in the TODO: name.js
 // const audioPlayer = document.querySelector("#audio-player");
 
-let secsSinceLastAction = 0;
-const secsToHideAudioControls = 2;
+let secsSinceLastAction = 0.0;
+const secsToHideAudioControls = 1.5;
 let audioControlsIsActive = true;
+let isPointerOverControls = false;
 
 
-setInterval(incSecsSinceLastAction, 1000);
+setInterval(incSecsSinceLastAction, 250);
 
 function incSecsSinceLastAction() {
-    secsSinceLastAction++;
-    if (secsSinceLastAction >= secsToHideAudioControls && !audioPlayer.paused) {
+    secsSinceLastAction += 0.250;
+    console.log(secsSinceLastAction);
+    if (secsSinceLastAction >= secsToHideAudioControls && 
+        !audioPlayer.paused && !isPointerOverControls) {
         restartAnimation("slide-out");
     }
 }
@@ -25,9 +28,9 @@ actions = [
     "touchstart",
 ]
 
-actions.forEach (action => {
+actions.forEach(action => {
     document.addEventListener(action, () => {
-        secsSinceLastAction = 0;
+        secsSinceLastAction = 0.0;
         restartAnimation("slide-in");
     });
 });
@@ -57,14 +60,12 @@ function restartAnimation(animation) {
     }
 }
 
+
+
+// Checks if the mouse pointer is hovering over the controls
 audioControls.addEventListener("mouseenter", () => {
-    console.log("HERE");
-    secsSinceLastAction = 0;
+    isPointerOverControls = true;
 });
-
-
-
-// audio
-
-
-
+audioControls.addEventListener("mouseleave", () => {
+    isPointerOverControls = false;
+});
