@@ -1,4 +1,7 @@
-const lyrics = document.querySelector("#lyrics");
+let lyrics = document.querySelector("#lyrics");
+// const lyricsText = lyrics.innerHTML
+
+
 const audioPlayer = document.querySelector("#audio-player");
 
 const playButton = document.querySelector("#play-button");
@@ -19,11 +22,12 @@ const audioProgressBar = document.querySelector("#audio-progress");
 
 let isIntroDone = false
 
+// lyrics.innerHTML = " "
+
 
 lyrics.stop();
 playIcon.style.visibility = "visible";
 unmuteIcon.style.visibility = "visible";
-// audioProgressBar.max = audioPlayer.duration;
 
 playButton.addEventListener("click", pauseOrPlay)
 
@@ -34,8 +38,8 @@ function pauseOrPlay() {
         ChangeIcon(pauseIcon, playIcons);
     }
     else {
-        lyrics.stop();
         audioPlayer.pause();
+        lyrics.stop();
         ChangeIcon(playIcon, playIcons);
     }
 }
@@ -74,20 +78,29 @@ function playLyrics() {
     }
 }
 
+function restartLyrics() {
+    let new_lyrics = lyrics.cloneNode(true);
+    lyrics.replaceWith(new_lyrics);
+    lyrics = new_lyrics
+}
+
 audioPlayer.addEventListener("timeupdate", detectLyricsStart)
 
 function detectLyricsStart() {
     if (audioPlayer.currentTime >= 12.0) {
+        lyrics.style.visibility = "visible";
         isIntroDone = true;
-        playLyrics();
+        // playLyrics();
+        restartLyrics();
         audioPlayer.removeEventListener("timeupdate", detectLyricsStart)
     }
 }
 
 
 
+
 audioPlayer.addEventListener("ended", () => {
-    lyrics.loop++;
+    lyrics.style.visibility = "hidden";
     lyrics.stop();
     isIntroDone = false;
     audioPlayer.addEventListener("timeupdate", detectLyricsStart);
@@ -104,6 +117,7 @@ function ChangeIcon(iconToActivate, iconGroup) {
         }
     }
 }
+
 
 
 audioPlayer.addEventListener("timeupdate", () => {

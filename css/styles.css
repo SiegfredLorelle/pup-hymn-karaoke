@@ -161,6 +161,7 @@ main > #lyrics {
     height: 60vh;
     margin: 0 0 2rem;
     max-width: 450px;
+    visibility: hidden;
 
 }
 
