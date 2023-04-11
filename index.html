@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="PUP Hymn with audio and scrolling text">
+        <meta name="description" content="PUP Hymn Karaoke">
         <meta name="author" content="Siegfred Lorelle C. Mina">
         <link rel="icon" href="img/favicon.ico">
         
@@ -20,7 +20,7 @@
 
     <body>
         <header>
-            <button id="hamburger-menu-button">
+            <button id="menu-button">
                 <span class="material-symbols-rounded">
                     more_vert
                 </span>
@@ -59,7 +59,7 @@
 
             <marquee id="lyrics" direction="up" scrollamount="3" loop="1">
                 Sintang Paaralan
-                <br><br>
+                <br>
                 Tanglaw ka ng bayan
                 <br><br>
                 Pandayan ng isip ng kabataan
@@ -103,9 +103,6 @@
                     <span class="material-symbols-rounded" id="play-icon">
                         play_arrow
                     </span>
-                    <!-- <span class="material-symbols-rounded" id="replay-icon">
-                        replay
-                    </span> -->
                     <span class="material-symbols-rounded" id="pause-icon">
                         pause
                     </span>
@@ -132,19 +129,8 @@
     </body>
 
     <script src="js/audio-and-lyrics.js"></script>
-    <script src="js/audio-ui-visibility.js"></script>
+    <script src="js/controls-visibility.js"></script>
     <script src="js/hotkeys.js"></script>
-    <script src="js/menu.js"></script>
+    <script src="js/menu-visibility.js"></script>
     <script src="js/color-scheme.js"></script>
 </html>
-
-<!-- TODO: -->
-<!-- TEST AUTOPLAY ON DIFFERENT BROWSERS -->
-<!-- TEST IF LYRICS IS IN SYNCH WITH AUDIO -->
-<!-- RENAME VARIABLES IN JS USING HAMBURGER TO MENU ICON -->
-<!-- Comments -->
-
-<!-- FOOTER -->
-<!-- HIGHLIGHT WHAT LINE NA, DIVIDE MARQUEE BY LINE, MAP AUDIO TIME SA SPAN NG MARQUEE-->
-<!-- Allow restarting the song via click and hotkey -->
-<!-- Remember which color scheme mode is chosen in the previous sessions -->

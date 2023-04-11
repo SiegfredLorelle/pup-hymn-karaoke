@@ -27,8 +27,8 @@ let light_mode_colors = {
 
 }
 
+/* Change the color scheme when clicking the color scheme button */
 colorSchemeBtn.addEventListener("click", () => {
-
     if (isDarkMode) {
         colors = light_mode_colors;
         isDarkMode = false;
@@ -44,6 +44,7 @@ colorSchemeBtn.addEventListener("click", () => {
     }
 });
 
+/* Show the correct color scheme icon depending on what is activated */
 function changeColorSchemeIcon() {
     if (isDarkMode) {
         darkModeIcon.style.visibility = "hidden";
@@ -54,7 +55,3 @@ function changeColorSchemeIcon() {
         lightModeIcon.style.visibility = "hidden";
     }
 }
-
-
-
-

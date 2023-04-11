@@ -45,15 +45,15 @@ header {
 }
 
 
-.slide-in-left {
-    animation: slide-in-left 0.25s ease-out both;
+.slide-out-left {
+    animation: slide-out-left 0.25s ease-out both;
 }
 .slide-in-right {
     animation: slide-in-right 0.25s ease-in both;
 }
 
 
-@keyframes slide-in-left {
+@keyframes slide-out-left {
     from {
         transform: translate(0%);
     }

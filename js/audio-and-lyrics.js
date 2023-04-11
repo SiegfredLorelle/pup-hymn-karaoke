@@ -1,7 +1,4 @@
 let lyrics = document.querySelector("#lyrics");
-// const lyricsText = lyrics.innerHTML
-
-
 const audioPlayer = document.querySelector("#audio-player");
 
 const playButton = document.querySelector("#play-button");
@@ -24,14 +21,14 @@ const audioProgressBar = document.querySelector("#audio-progress");
 
 let isIntroDone = false
 
-
+// Do the following when starting the page
 lyrics.stop();
 playIcon.style.visibility = "visible";
 unmuteIcon.style.visibility = "visible";
 replayIcon.style.visibility = "visible";
 
 playButton.addEventListener("click", pauseOrPlay)
-
+/* Pause or play both the audio and the lyrics */
 function pauseOrPlay() {
     if (audioPlayer.paused) {
         audioPlayer.play();
@@ -46,8 +43,8 @@ function pauseOrPlay() {
 }
 
 
+/* Mute or unmute the volume of the audio */
 muteButton.addEventListener("click", muteOrUnmute)
-
 function muteOrUnmute() {
     if (volumeSlider.value == volumeSlider.min) {
         volumeSlider.value = prevVolume;
@@ -59,9 +56,8 @@ function muteOrUnmute() {
     changeVolume();
 }
 
+/* Change the volume of the audio when the volume slider is changed */
 volumeSlider.addEventListener("input", changeVolume);
-
-
 function changeVolume() {
     audioPlayer.volume = volumeSlider.value;
     if (volumeSlider.value == volumeSlider.min) {
@@ -73,41 +69,33 @@ function changeVolume() {
     }
 }
 
+/* Play the lyrics (marquee) when the intro is done */
 function playLyrics() {
     if (isIntroDone) {
         lyrics.start();
     }
 }
 
+/* Reset the lyrics back from the start 
+by removing and re-adding it to the DOM */
 function restartLyrics() {
     let new_lyrics = lyrics.cloneNode(true);
     lyrics.replaceWith(new_lyrics);
     lyrics = new_lyrics
-    // isIntroDone = false;
 }
 
+/* Checks if the intro of the audio is done */
 audioPlayer.addEventListener("timeupdate", detectLyricsStart)
-
 function detectLyricsStart() {
     if (audioPlayer.currentTime >= 12.0) {
         lyrics.style.visibility = "visible";
         isIntroDone = true;
-        // playLyrics();
         restartLyrics();
         audioPlayer.removeEventListener("timeupdate", detectLyricsStart);
-        // audioPlayer.addEventListener("timeupdate", detectLyricsEnd);
-
     }
 }
 
-// function detectLyricsEnd() {
-//     if (audioPlayer.currentTime >= 108.0) {
-//         lyrics.style.visibility = "hidden";
-//         audioPlayer.removeEventListener("timeupdate", detectLyricsEnd);
-
-//     }
-// }
-
+/* Reset the variables to default (same as their starting values) */
 function resetVariables() {
     lyrics.style.visibility = "hidden";
     lyrics.stop();
@@ -116,6 +104,8 @@ function resetVariables() {
 
 }
 
+/* Resets the both the lyrics and the audio */
+replayButton.addEventListener("click", replay);
 function replay() {
     restartLyrics();
     resetVariables();
@@ -125,19 +115,13 @@ function replay() {
 
 }
 
-replayButton.addEventListener("click", replay);
-
 
 audioPlayer.addEventListener("ended", () => {
-    // lyrics.style.visibility = "hidden";
     resetVariables();
-    // lyrics.stop();
-    // isIntroDone = false;
-    // audioPlayer.addEventListener("timeupdate", detectLyricsStart);
-    // ChangeIcon(replayIcon, playIcons);
     playButton.style.display = "none";
 });
 
+/* Hides all the icon, and only show the active one */
 function ChangeIcon(iconToActivate, iconGroup) {
     for (icon of iconGroup) {
         if (icon == iconToActivate) {
@@ -148,18 +132,8 @@ function ChangeIcon(iconToActivate, iconGroup) {
         }
     }
 }
-
-
-
-
-// audioPlayer.addEventListener("play", () => {
-//     if (playButton.style.display != "grid") {
-//         playButton.style.display = "grid";
-//     }
-// });
-
-
-
+/* Updates the progress bar 
+based on how much audio is played relative to its full duration */
 audioPlayer.addEventListener("timeupdate", () => {
     audioProgressBar.value = audioPlayer.currentTime / audioPlayer.duration;
 })

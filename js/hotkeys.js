@@ -1,5 +1,6 @@
+/* Listen to keyboard input from the user, 
+if it matches a hotkey, then trigger it */
 document.addEventListener("keydown", (pressed) => {
-
     switch (pressed.key.toLocaleLowerCase()) {
         case " ":
             pauseOrPlay();
@@ -15,5 +16,3 @@ document.addEventListener("keydown", (pressed) => {
             break;
     }
     })
-
-
