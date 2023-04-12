@@ -101,6 +101,7 @@ function restartLyrics() {
     let new_lyrics = lyrics.cloneNode(true);
     lyrics.replaceWith(new_lyrics);
     lyrics = new_lyrics
+    ChangeIcon(pauseIcon, playIcons);
 }
 
 /* Checks if the intro of the audio is done */
